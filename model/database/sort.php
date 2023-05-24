@@ -1,3 +1,4 @@
+<!-- сортировка в таблице -->
 <?php
     require_once __DIR__.'/../../init.php';
 
@@ -18,7 +19,8 @@
 
         return $resObj->fetchAll();
     }
-
+// если был вызван запрос fetch из js то начинает сортировку и возвращает отсортировное добро
+// должен возвращать остортированное добро в таблицу и обновлять её.. но нет
     if (isset($_GET['field'])) {
         $result = sortResult();
         header('Content-Type: application/json');
