@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+table {
+  border: 4px rgba(156, 90, 199, 0.48) solid;
+  border-radius: 10px;
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+tbody {
+  border-top: 4px rgba(156, 90, 199, 0.48) solid;
+}
+tbody>tr {
+  text-align: center;
+}
+
+th, tr, td {
+  padding: 10px;
+  border: 4px rgba(156, 90, 199, 0.48) solid;
+  border-radius: 10px;
+}
+
+.containe {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: "Comic Sans MS";
+  font-size: 35px;
+  margin: 60px;
+  text-align: center;
+  width: 100%;
+}
+
+span {
+  font-size: 14px;
+  margin: 0;
+  width: 20%;
+}
+
+.submit__product {
+
+}
+.submit__product_hidden {
+
+}
+
+.error {
+  border: red 2px solid;
+}

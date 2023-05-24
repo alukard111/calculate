@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculate on PHP and Twig</title>
+    <link rel="stylesheet" href="../style/index.scss" >
+</head>
+    <body>
+        <div class="containe">
+            <div class="title">
+                Calculate
+                <span>
+                   <br/> В калькуляторе не хватает: <br/>
+                    Сортировки, !!`добавления продуктов`!!,
+                    общие траты за все продукты,
+                    пересчет цены за киллограм,
+                    добавление именно даты.
+                </span>
+            </div>
+            <div class="product__add">
+                <form action="./../index.php" method="post">
+                    <div>
+                       <input type="text" name="postName" value="" placeholder="Product name">
+                       <input type="text" name="postType" placeholder="Product type">
+                       <input step=any type="number" name="postWeight" placeholder="Weight of packing">
+                       <input step=any type="number" name="postPriceOfPacking" placeholder="Price of packing">
+<!--                            Убрать цену за кг ввод-->
+
+                       <input step=any type="number" name="postBoughtPacks" placeholder="Bought packs">
+                       <input type="text" name="postMargetName" placeholder="Market Name">
+                       <input type="text" name="postTown" placeholder="City/Country">
+
+<!--                         можно добавить итог цену калькулятором и считать через js с проверкой на целочисленное. -->
+                        <input class="submit__product" type="submit" value="Submit">
+                    </div>
+                    <div class="submit">
+
+
+                    </div>
+                </form>
+            </div>
+            <div class="products">
+                {% block table %}
+
+                {% endblock %}
+
+                <!--      При нажатии на кнопку js запускает поп ап или добавляет строку ввода продуктов          -->
+                <!--      Добавление - таб переключение между категориями. Ентер сохранение продукта.(если что-то
+                           не заполненно  -- не отправлять, оставить и дать возможность закончить добавление        -->
+                <!-- Продукт сразу отображается в добавленных и добавление продуктов не пропадает.
+                        Пропадает только если нажать кнопку -- закрыть -->
+            </div>
+
+        </div>
+        <script src="../static/js/main.js"></script>
+    </body>
+</html>

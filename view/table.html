@@ -1,0 +1,65 @@
+{% extends "main_layout.html" %}
+
+{% block table %}
+<table>
+    <thead>
+    <tr>
+        <th>Product name</th>
+        <th>Product type</th>
+        <th>Weight of packing</th>
+        <th>Price of packing</th>
+        <th>Price for 1 kg</th>
+        <th>Bought packs</th>
+        <th>Market Name</th>
+        <th>City/Country</th>
+        <th>Data</th>
+        <th>All spent</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% if sortProducts is same as true %}
+        {% for product in sortProducts %}
+        <tr class="sort">
+            <td>{{ product["Product name"] }}</td>
+            <td>{{ product["Product type"] }}</td>
+            <td>{{ product["Weight of packing"] }}</td>
+            <td>{{ product["Price of packing"] }}</td>
+            <td>{{ product["Price for 1 kg"] }}</td>
+            <td>{{ product["Bought packs"] }}</td>
+            <td>{{ product["Market Name"] }}</td>
+            <td>{{ product["City/Country"] }}</td>
+            <td>{{ product["Data"] }}</td>
+            <td>{{ product["All spent"] }}</td>
+            <td>
+                <form method="POST" action="../index.php">
+                    <input type="hidden" name="delete" value="{{ product['id'] }}">
+                    <input placeholder="delete" value='Delete' type="submit">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        {% for product in products %}
+        <tr>
+            <td>{{ product["Product name"] }}</td>
+            <td>{{ product["Product type"] }}</td>
+            <td>{{ product["Weight of packing"] }}</td>
+            <td>{{ product["Price of packing"] }}</td>
+            <td>{{ product["Price for 1 kg"] }}</td>
+            <td>{{ product["Bought packs"] }}</td>
+            <td>{{ product["Market Name"] }}</td>
+            <td>{{ product["City/Country"] }}</td>
+            <td>{{ product["Data"] }}</td>
+            <td>{{ product["All spent"] }}</td>
+            <td>
+                <form method="POST" action="../index.php">
+                    <input type="hidden" name="delete" value="{{ product['id'] }}">
+                    <input placeholder="delete" value='Delete' type="submit">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}
