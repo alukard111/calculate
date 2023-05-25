@@ -1,4 +1,4 @@
-
+// внизу есть дашборд! 
 class Main {
     constructor() {
         this.submitProduct = document.querySelector('.submit__product');
@@ -125,7 +125,8 @@ const main = new Main();
 
 
 /// DASHBOARD
-
+// даш борд создается сразу и вешает функцию сортировки на каждый столбик в таблице
+// при вызове функции sortElements отправляет запрос в php sort.php
 class Dashboard {
     constructor() {
         this.dashboardAllTh = document.querySelectorAll('th');
